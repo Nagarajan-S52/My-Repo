@@ -2,45 +2,53 @@
 <testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-10T12:45:58 IST" name="All Test Suite" finished-at="2024-06-10T12:46:54 IST" duration-ms="56162">
+  <suite started-at="2024-06-11T12:33:36 IST" name="All Test Suite" finished-at="2024-06-11T12:34:39 IST" duration-ms="63780">
     <groups>
     </groups>
-    <test started-at="2024-06-10T12:45:58 IST" name="/Users/nagarajans/Documents/Automation/SwapaWorkbook" finished-at="2024-06-10T12:46:54 IST" duration-ms="56162">
+    <test started-at="2024-06-11T12:33:36 IST" name="/Users/nagarajans/Documents/Automation/SwapaWorkbook" finished-at="2024-06-11T12:34:39 IST" duration-ms="63780">
       <class name="Com.FunctionExecution.PilotPollingFormExecution">
-        <test-method is-config="true" signature="OpenBrowser()[pri:0, instance:Com.FunctionExecution.PilotPollingFormExecution@4034c28c]" started-at="2024-06-10T12:45:58 IST" name="OpenBrowser" finished-at="2024-06-10T12:46:09 IST" duration-ms="11122" status="PASS">
+        <test-method is-config="true" signature="OpenBrowser()[pri:0, instance:Com.FunctionExecution.PilotPollingFormExecution@780cb77]" started-at="2024-06-11T12:33:36 IST" name="OpenBrowser" finished-at="2024-06-11T12:33:48 IST" duration-ms="11994" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenBrowser -->
-        <test-method signature="loginToSwapaApp()[pri:1, instance:Com.FunctionExecution.PilotPollingFormExecution@4034c28c]" started-at="2024-06-10T12:46:09 IST" name="loginToSwapaApp" finished-at="2024-06-10T12:46:13 IST" duration-ms="4059" status="PASS">
+        <test-method signature="loginToSwapaApp()[pri:1, instance:Com.FunctionExecution.PilotPollingFormExecution@780cb77]" started-at="2024-06-11T12:33:48 IST" name="loginToSwapaApp" finished-at="2024-06-11T12:33:53 IST" duration-ms="5058" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToSwapaApp -->
-        <test-method signature="navigateToPilotPoling()[pri:2, instance:Com.FunctionExecution.PilotPollingFormExecution@4034c28c]" started-at="2024-06-10T12:46:13 IST" name="navigateToPilotPoling" finished-at="2024-06-10T12:46:29 IST" duration-ms="15060" status="PASS">
+        <test-method signature="navigateToPilotPoling()[pri:2, instance:Com.FunctionExecution.PilotPollingFormExecution@780cb77]" started-at="2024-06-11T12:33:53 IST" name="navigateToPilotPoling" finished-at="2024-06-11T12:34:09 IST" duration-ms="15821" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToPilotPoling -->
-        <test-method signature="fillPilotPollingForm()[pri:3, instance:Com.FunctionExecution.PilotPollingFormExecution@4034c28c]" started-at="2024-06-10T12:46:29 IST" name="fillPilotPollingForm" finished-at="2024-06-10T12:46:30 IST" duration-ms="1141" status="PASS">
+        <test-method signature="fillPilotPollingForm()[pri:3, instance:Com.FunctionExecution.PilotPollingFormExecution@780cb77]" started-at="2024-06-11T12:34:09 IST" name="fillPilotPollingForm" finished-at="2024-06-11T12:34:10 IST" duration-ms="1226" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fillPilotPollingForm -->
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:Com.FunctionExecution.PilotPollingFormExecution@780cb77]" started-at="2024-06-11T12:34:10 IST" name="CloseBrowser" finished-at="2024-06-11T12:34:11 IST" duration-ms="1065" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
       </class> <!-- Com.FunctionExecution.PilotPollingFormExecution -->
       <class name="Com.FunctionExecution.DisabilityCalculatorExecution">
-        <test-method is-config="true" signature="OpenBrowser()[pri:0, instance:Com.FunctionExecution.DisabilityCalculatorExecution@f8c1ddd]" started-at="2024-06-10T12:46:30 IST" name="OpenBrowser" finished-at="2024-06-10T12:46:35 IST" duration-ms="5042" status="PASS">
+        <test-method is-config="true" signature="OpenBrowser()[pri:0, instance:Com.FunctionExecution.DisabilityCalculatorExecution@13c10b87]" started-at="2024-06-11T12:34:11 IST" name="OpenBrowser" finished-at="2024-06-11T12:34:18 IST" duration-ms="6902" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenBrowser -->
-        <test-method signature="navigateToDisabilityCalculator()[pri:1, instance:Com.FunctionExecution.DisabilityCalculatorExecution@f8c1ddd]" started-at="2024-06-10T12:46:35 IST" name="navigateToDisabilityCalculator" finished-at="2024-06-10T12:46:54 IST" duration-ms="19192" status="PASS">
+        <test-method signature="navigateToDisabilityCalculator()[pri:1, instance:Com.FunctionExecution.DisabilityCalculatorExecution@13c10b87]" started-at="2024-06-11T12:34:18 IST" name="navigateToDisabilityCalculator" finished-at="2024-06-11T12:34:38 IST" duration-ms="20096" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToDisabilityCalculator -->
-        <test-method signature="validateMonthlyMbe()[pri:2, instance:Com.FunctionExecution.DisabilityCalculatorExecution@f8c1ddd]" started-at="2024-06-10T12:46:54 IST" name="validateMonthlyMbe" finished-at="2024-06-10T12:46:54 IST" duration-ms="126" status="PASS">
+        <test-method signature="validateMonthlyMbe()[pri:2, instance:Com.FunctionExecution.DisabilityCalculatorExecution@13c10b87]" started-at="2024-06-11T12:34:38 IST" name="validateMonthlyMbe" finished-at="2024-06-11T12:34:38 IST" duration-ms="122" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateMonthlyMbe -->
-        <test-method signature="validateSickBankTpf()[pri:3, instance:Com.FunctionExecution.DisabilityCalculatorExecution@f8c1ddd]" started-at="2024-06-10T12:46:54 IST" name="validateSickBankTpf" finished-at="2024-06-10T12:46:54 IST" duration-ms="399" status="PASS">
+        <test-method signature="validateSickBankTpf()[pri:3, instance:Com.FunctionExecution.DisabilityCalculatorExecution@13c10b87]" started-at="2024-06-11T12:34:38 IST" name="validateSickBankTpf" finished-at="2024-06-11T12:34:38 IST" duration-ms="436" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateSickBankTpf -->
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:Com.FunctionExecution.DisabilityCalculatorExecution@13c10b87]" started-at="2024-06-11T12:34:38 IST" name="CloseBrowser" finished-at="2024-06-11T12:34:39 IST" duration-ms="1043" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
       </class> <!-- Com.FunctionExecution.DisabilityCalculatorExecution -->
     </test> <!-- /Users/nagarajans/Documents/Automation/SwapaWorkbook -->
   </suite> <!-- All Test Suite -->
