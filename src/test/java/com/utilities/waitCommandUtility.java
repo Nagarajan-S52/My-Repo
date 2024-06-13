@@ -1,4 +1,4 @@
-package Com.BasePOM;
+package com.utilities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,7 @@ import java.time.Duration;
 /**
  * Utility class for implementing different types of waits in Selenium WebDriver.
  */
-public class WaitUtils {
+public class waitCommandUtility {
    WebDriver driver;
    WebDriverWait wait;
 
@@ -20,7 +20,7 @@ public class WaitUtils {
      *
      * @param driver The WebDriver instance.
      */
-    public WaitUtils(WebDriver driver) {
+    public waitCommandUtility(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }

@@ -1,6 +1,10 @@
-package Com.FunctionExecution;
+package com.test;
 
-import Com.BasePOM.*;
+import com.baseclass.baseClass;
+import com.pageobject.loginPage;
+import com.pageobject.pilotPollingFormPage;
+import com.pageobject.homePage;
+import com.utilities.*;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
@@ -9,15 +13,15 @@ import java.io.IOException;
 /**
  * Test class to execute pilot polling form related tests.
  */
-public class PilotPollingFormExecution extends BaseUtils {
-    LoginPage login;
+public class pilotPollingFormTest extends baseClass {
+    loginPage login;
 
     /**
      * Constructor to initialize BaseUtils.
      *
      * @throws FileNotFoundException If the properties file is not found.
      */
-    public PilotPollingFormExecution() throws FileNotFoundException {
+    public pilotPollingFormTest() throws FileNotFoundException {
     }
     /**
      * Test case to perform login.
@@ -27,7 +31,7 @@ public class PilotPollingFormExecution extends BaseUtils {
     @Test(priority = 1, enabled = true)
     public void loginToSwapaApp() throws IOException {
         // Instantiate LoginPage
-       this.login = new LoginPage(driver);
+       this.login = new loginPage(driver);
         // Perform login
         login.ClickMainLogin();
         login.setUsername(properties.getDataFromPropertyFile("username"));
@@ -41,7 +45,7 @@ public class PilotPollingFormExecution extends BaseUtils {
     @Test(priority = 2, enabled = true)
     public void navigateToPilotPoling() throws IOException {
         // Instantiate swapaHomePage
-        swapaHomePage pilot = new swapaHomePage(driver);
+        homePage pilot = new homePage(driver);
         // Click on Resources
         pilot.clickResources();
         // Click on SRC Forms
@@ -58,8 +62,8 @@ public class PilotPollingFormExecution extends BaseUtils {
     @Test(priority = 3, enabled = true)
     public void fillPilotPollingForm() throws InterruptedException, IOException {
         // Instantiate PilotPollingFormPage and PageScrolling
-        PilotPollingFormPage answer = new PilotPollingFormPage(driver);
-        PageScrolling scroll = new PageScrolling(driver);
+        pilotPollingFormPage answer = new pilotPollingFormPage(driver);
+        pageScrollingUtility scroll = new pageScrollingUtility(driver);
         // Answer questions and scroll as necessary
         answer.selectQuestion1();
         answer.selectQuestion2();

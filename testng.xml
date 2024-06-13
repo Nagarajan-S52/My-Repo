@@ -3,14 +3,14 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/Users/nagarajans/Documents/Automation/SwapaWorkbook">
         <classes>
-            <class name="Com.FunctionExecution.PilotPollingFormExecution">
+            <class name="com.test.pilotPollingFormTest">
                 <methods>
                     <include name="loginToSwapaApp"/>
                     <include name="navigateToPilotPoling"/>
                     <include name="fillPilotPollingForm"/>
                 </methods>
             </class>
-            <class name="Com.FunctionExecution.DisabilityCalculatorExecution">
+            <class name="com.test.disabilityCalculatorTest">
                 <methods>
                     <include name="navigateToDisabilityCalculator"/>
                     <include name="validateMonthlyMbe"/>

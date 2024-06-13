@@ -1,5 +1,8 @@
-package Com.BasePOM;
+package com.baseclass;
 
+import com.utilities.propertiesFileUtility;
+import com.utilities.waitCommandUtility;
+import com.utilities.webDriverUtility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -10,20 +13,24 @@ import org.testng.annotations.BeforeClass;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.time.Duration;
 
 /**
  * Base utility class for setting up and tearing down WebDriver instances.
  */
-public class BaseUtils {
+public class baseClass {
     public WebDriver driver;
 
-    public WebDriverUtility webDriverUtils = new WebDriverUtility();
-    public WaitUtils wait;
+    public webDriverUtility webDriverUtils;
+    public waitCommandUtility wait;
+    public propertiesFileUtility properties;
 
-    public BaseUtils() throws FileNotFoundException {
+    public baseClass() throws FileNotFoundException {
+
+        this.webDriverUtils = new webDriverUtility();
+        this.properties = new propertiesFileUtility(driver);
+
     }
-    public PropertiesFileUtils properties = new PropertiesFileUtils(driver);
+
     /**
      * Method to open the browser and initialize WebDriver based on the browser specified in the properties file.
      *
@@ -33,34 +40,35 @@ public class BaseUtils {
     public void OpenBrowser() throws IOException {
 
         // Get the browser name from the properties file
-        String browserName = this.properties.getDataFromPropertyFile("BrowserName");
+        String browserName = properties.getDataFromPropertyFile("BrowserName");
         if (browserName.equals("chrome")) {
-            this.driver = new ChromeDriver();
+            driver = new ChromeDriver();
         } else if (browserName.equals("firefox")) {
-            this.driver = new FirefoxDriver();
+            driver = new FirefoxDriver();
         } else if (browserName.equals("edge")) {
-            this.driver = new EdgeDriver();
+            driver = new EdgeDriver();
         } else if (browserName.equals("safari")) {
-            this.driver= new SafariDriver();
+            driver = new SafariDriver();
         }
         // Maximize the browser window
-        this.webDriverUtils.maximize(this.driver);
+        webDriverUtils.maximize(driver);
 
         // Initialize WaitUtils and set implicit wait
-        this.wait = new WaitUtils(this.driver);
-        this.wait.implicitWaitCommand();
+        wait = new waitCommandUtility(driver);
+        wait.implicitWaitCommand();
 
         // Open the URL specified in the properties file
         driver.get(properties.getDataFromPropertyFile("url"));
     }
+
     /**
      * Method to close the browser and quit the WebDriver.
      */
-@AfterClass
+    @AfterClass
     public void CloseBrowser() {
 
         // Quit the WebDriver
-        this.webDriverUtils.minimize(this.driver);
+        webDriverUtils.minimize(driver);
         driver.quit();
     }
 }

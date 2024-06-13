@@ -1,11 +1,11 @@
-package Com.BasePOM;
+package com.utilities;
 
 import java.util.Random;
 
 /**
  * Utility class to generate random numbers.
  */
-public class RandomProgramUtils {
+public class randomProgramUtillity {
     /**
      * Generates a random integer within the specified range.
      *

@@ -1,4 +1,4 @@
-package Com.BasePOM;
+package com.utilities;
 
 import org.openqa.selenium.WebDriver;
 
@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 /**
  * Utility class for performing various actions using Selenium's Actions class.
  */
-public class ActionClassUtils {
+public class actionClassUtility {
 
     WebDriver driver;
     Actions action;
@@ -15,7 +15,7 @@ public class ActionClassUtils {
     /**
      * Constructor to initialize WebDriver.
      */
-    public ActionClassUtils(WebDriver driver){
+    public actionClassUtility(WebDriver driver){
         this.driver = driver;
     }
 

@@ -1,5 +1,7 @@
-package Com.BasePOM;
+package com.pageobject;
 
+import com.utilities.propertiesFileUtility;
+import com.utilities.waitCommandUtility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
@@ -8,22 +10,22 @@ import java.io.IOException;
 /**
  * Page Object Model (POM) class for the Login page.
  */
-public class LoginPage {
+public class loginPage {
     WebDriver driver;
     SoftAssert softAssert;
-    PropertiesFileUtils property;
-    WaitUtils wait;
+    propertiesFileUtility property;
+    waitCommandUtility wait;
 
     /**
      * Constructor to initialize WebDriver and utilities.
      *
      * @param driver The WebDriver instance to interact with the browser.
      */
-    public LoginPage(WebDriver driver) {
+    public loginPage(WebDriver driver) {
         this.driver = driver;
         this.softAssert = new SoftAssert();
-        this.property = new PropertiesFileUtils(driver);
-        this.wait = new WaitUtils(this.driver);
+        this.property = new propertiesFileUtility(driver);
+        this.wait = new waitCommandUtility(this.driver);
     }
 
     // Locators for elements on the Login page

@@ -1,5 +1,9 @@
-package Com.BasePOM;
+package com.pageobject;
 
+import com.utilities.actionClassUtility;
+import com.utilities.pageScrollingUtility;
+import com.utilities.propertiesFileUtility;
+import com.utilities.waitCommandUtility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,39 +11,43 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
-import java.math.RoundingMode;
-import java.util.List;
 
 /**
  * Page Object Model (POM) class for the Disability Calculator Page.
  */
-public class DisabilityCalculatorPage {
+public class disabilityCalculatorPage {
     public WebDriver driver;
 
     SoftAssert softAssert;
-    PropertiesFileUtils properties;
+    propertiesFileUtility properties;
     Select select;
-    PageScrolling scroll;
-    ActionClassUtils action;
-    WaitUtils wait ;
+    pageScrollingUtility scroll;
+    actionClassUtility action;
+    waitCommandUtility wait ;
 
     /**
      * Constructor to initialize the driver and utilities.
      *
      * @param driver The WebDriver instance to interact with the browser.
      */
-    public DisabilityCalculatorPage(WebDriver driver) {
+    public disabilityCalculatorPage(WebDriver driver) {
 
         this.driver = driver;
-        this.properties = new PropertiesFileUtils(driver);
+        this.properties = new propertiesFileUtility(driver);
         this.softAssert = new SoftAssert();
-        this.wait = new WaitUtils(this.driver);
+        this.wait = new waitCommandUtility(this.driver);
     }
 
     // Locators for elements on the Disability Calculator Page
     private By payrateDropdown = By.id("payrate");
     private By monthlyTFP = By.name("mtfp");
     private By monthlyMBE = By.id("pde");
+    private By sickBank = By.id("sickbank");
+    private By CalculateButton = By.xpath("//button[text()='Calculate']");
+    private By sickuseDropdown = By.xpath("//select[@name=\"sickuse\"]");
+    private By tSickBankTd1 = By.xpath("(//div[@class=\"swapatable-container\"])/../div/table/tbody/tr[1]/td[2]");
+    private By tSickBankTd2 = By.xpath("(//div[@class=\"swapatable-container\"])/../div/table/tbody/tr[2]/td[2]");
+    private By tSickBankTd3 = By.xpath("(//div[@class=\"swapatable-container\"])/../div/table/tbody/tr[3]/td[2]");
 
     /**
      * Method to calculate MBE field value and verify it.
@@ -76,14 +84,6 @@ public class DisabilityCalculatorPage {
         softAssert.assertAll();
     }
 
-    // Locators for elements on the Disability Calculator Page
-    private By sickBank = By.id("sickbank");
-    private By CalculateButton = By.xpath("//button[text()='Calculate']");
-    private By sickuseDropdown = By.xpath("//select[@name=\"sickuse\"]");
-    private By tSickBankTd1 = By.xpath("(//div[@class=\"swapatable-container\"])/../div/table/tbody/tr[1]/td[2]");
-    private By tSickBankTd2 = By.xpath("(//div[@class=\"swapatable-container\"])/../div/table/tbody/tr[2]/td[2]");
-    private By tSickBankTd3 = By.xpath("(//div[@class=\"swapatable-container\"])/../div/table/tbody/tr[3]/td[2]");
-
     /**
      * Method to calculate the sick bank TPF filed value and verify it.
      *
@@ -108,7 +108,7 @@ public class DisabilityCalculatorPage {
         double finalMonthlyTFPValue = Double.parseDouble(valueInMonthlyTFP);
 
         // Select the sick use value from the dropdown
-        action = new ActionClassUtils(driver);
+        action = new actionClassUtility(driver);
         WebElement sickuse = driver.findElement(sickuseDropdown);
         action.clickAction(sickuse);
         select = new Select(sickuse);
@@ -124,7 +124,7 @@ public class DisabilityCalculatorPage {
         driver.findElement(CalculateButton).click();
 
         // Scroll down the page to view the results
-        scroll = new PageScrolling(driver);
+        scroll = new pageScrollingUtility(driver);
         scroll.setScroll300();
 
         // Calculate and verify the values in the sick bank table

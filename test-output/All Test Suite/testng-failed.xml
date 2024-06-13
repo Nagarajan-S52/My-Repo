@@ -3,13 +3,24 @@
 <suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="/Users/nagarajans/Documents/Automation/SwapaWorkbook(failed)">
     <classes>
-      <class name="Com.FunctionExecution.DisabilityCalculatorExecution">
+      <class name="com.test.DisabilityCalculatorExecution">
         <methods>
           <include name="validateSickBankTpf"/>
           <include name="navigateToDisabilityCalculator"/>
+          <include name="CloseBrowser"/>
           <include name="validateMonthlyMbe"/>
+          <include name="OpenBrowser"/>
         </methods>
-      </class> <!-- Com.FunctionExecution.DisabilityCalculatorExecution -->
+      </class> <!-- com.test.DisabilityCalculatorExecution -->
+      <class name="com.test.PilotPollingFormExecution">
+        <methods>
+          <include name="fillPilotPollingForm"/>
+          <include name="CloseBrowser"/>
+          <include name="navigateToPilotPoling"/>
+          <include name="loginToSwapaApp"/>
+          <include name="OpenBrowser"/>
+        </methods>
+      </class> <!-- com.test.PilotPollingFormExecution -->
     </classes>
   </test> <!-- /Users/nagarajans/Documents/Automation/SwapaWorkbook(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

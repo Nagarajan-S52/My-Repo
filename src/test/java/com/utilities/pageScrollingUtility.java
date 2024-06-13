@@ -1,4 +1,4 @@
-package Com.BasePOM;
+package com.utilities;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 /**
  * Utility class for scrolling the web page using JavaScriptExecutor.
  */
-public class PageScrolling {
+public class pageScrollingUtility {
 
     WebDriver driver;
     JavascriptExecutor scroll;
@@ -15,7 +15,7 @@ public class PageScrolling {
      *
      * @param driver The WebDriver instance to interact with the browser.
      */
-    public PageScrolling(WebDriver driver) {
+    public pageScrollingUtility(WebDriver driver) {
         this.driver = driver;
         this.scroll = (JavascriptExecutor) driver;
 

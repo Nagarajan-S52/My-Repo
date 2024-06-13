@@ -1,9 +1,9 @@
-package Com.FunctionExecution;
+package com.test;
 
-import Com.BasePOM.BaseUtils;
-import Com.BasePOM.DisabilityCalculatorPage;
-import Com.BasePOM.LoginPage;
-import Com.BasePOM.swapaHomePage;
+import com.baseclass.baseClass;
+import com.pageobject.disabilityCalculatorPage;
+import com.pageobject.loginPage;
+import com.pageobject.homePage;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
@@ -11,17 +11,17 @@ import java.io.IOException;
 /**
  * Test class to execute disability calculator related tests.
  */
-public class DisabilityCalculatorExecution extends BaseUtils {
+public class disabilityCalculatorTest extends baseClass {
 
     // Initialize the DisabilityCalculatorPage instance
-    DisabilityCalculatorPage disability = new DisabilityCalculatorPage(driver);;
+    disabilityCalculatorPage disability = new disabilityCalculatorPage(driver);;
 
     /**
      * Constructor to initialize BaseUtils.
      *
      * @throws FileNotFoundException If the properties file is not found.
      */
-    public DisabilityCalculatorExecution() throws FileNotFoundException {
+    public disabilityCalculatorTest() throws FileNotFoundException {
     }
 
     /**
@@ -34,7 +34,7 @@ public class DisabilityCalculatorExecution extends BaseUtils {
     @Test(priority = 1)
     public void navigateToDisabilityCalculator() throws IOException {
         // Instantiate LoginPage
-        LoginPage login = new LoginPage(driver);
+        loginPage login = new loginPage(driver);
         // Perform login
         login.ClickMainLogin();
         login.setUsername(properties.getDataFromPropertyFile("username"));
@@ -42,7 +42,7 @@ public class DisabilityCalculatorExecution extends BaseUtils {
         login.ClickLoginbutton();
 
         // Instantiate swapaHomePage
-        swapaHomePage home = new swapaHomePage(driver);
+        homePage home = new homePage(driver);
         // Click on Resources
         home.clickResources();
         // Click on Calculators
@@ -59,7 +59,7 @@ public class DisabilityCalculatorExecution extends BaseUtils {
     @Test(priority = 2,enabled = true)
     public void validateMonthlyMbe() throws IOException {
         // Recreate DisabilityCalculatorPage instance
-    disability = new DisabilityCalculatorPage(driver);
+    disability = new disabilityCalculatorPage(driver);
         // Calculate and verify monthly MBE value
         disability.calculateMBEiledValue();
     }
@@ -70,11 +70,19 @@ public class DisabilityCalculatorExecution extends BaseUtils {
      */
     @Test(priority = 3)
     public void validateSickBankTpf() throws IOException {
+        init();
         // Recreate DisabilityCalculatorPage instance
-        disability = new DisabilityCalculatorPage(driver);
+      //  disability = new DisabilityCalculatorPage(driver);
         // Calculate and verify sick bank TPF value
         disability.calculateSickBankTpfValue();
     }
+
+    public void         init(){
+        disability = new disabilityCalculatorPage(driver);
+
+
+    }
+
 
 
 }

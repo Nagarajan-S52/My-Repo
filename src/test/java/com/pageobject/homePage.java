@@ -1,34 +1,39 @@
-package Com.BasePOM;
+package com.pageobject;
 
+import com.utilities.propertiesFileUtility;
+import com.utilities.waitCommandUtility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 /**
  * Page Object Model (POM) class for the SWAPA Home page.
  */
-public class swapaHomePage {
+public class homePage {
 
     WebDriver driver;
     SoftAssert softAssert;
-    PropertiesFileUtils property;
-    WaitUtils wait ;
-    public swapaHomePage(WebDriver driver) {
-        /**
-         * Constructor to initialize WebDriver and utilities.
-         *
-         * @param driver The WebDriver instance.
-         */
+    propertiesFileUtility property;
+    waitCommandUtility wait ;
+    /**
+     * Constructor to initialize WebDriver and utilities.
+     *
+     * @param driver The WebDriver instance.
+     */
+    public homePage(WebDriver driver) {
+
         this.driver = driver;
         this.softAssert = new SoftAssert();
-        this.property = new PropertiesFileUtils(driver);
-        this.wait = new WaitUtils(this.driver);
+        this.property = new propertiesFileUtility(driver);
+        this.wait = new waitCommandUtility(this.driver);
     }
-
-    // Locator for the 'Resources' link
+    // Locators for elements on the Home Page
     private By resources = By.xpath("//span[text() = 'Resources']");
+    private By SrcForms = By.xpath("(//a[contains(text(),'SRC')])[1]");
+    private By PilotPollingForm = By.xpath("(//a[contains(text(),'Pilot')])[3]");
+    private By Calculators = By.linkText("Calculators");
+    private By DisabilityCalculator = By.xpath("(//a[contains(text(),'Calculators')])[1]/../div[3]/a[3]");
     /**
      * Clicks on the 'Resources' link.
      */
@@ -39,8 +44,6 @@ public class swapaHomePage {
         driver.findElement(resources).click();
     }
 
-    // Locator for the 'SRC Forms' link
-    private By SrcForms = By.xpath("(//a[contains(text(),'SRC')])[1]");
     /**
      * Clicks on the 'SRC Forms' link.
      */
@@ -52,8 +55,6 @@ public class swapaHomePage {
         driver.findElement(SrcForms).click();
     }
 
-    // Locator for the 'Pilot Polling Form' link
-    private By PilotPollingForm = By.xpath("(//a[contains(text(),'Pilot')])[3]");
     /**
      * Clicks on the 'Pilot Polling Form' link and verifies the page title.
      *
@@ -70,8 +71,7 @@ public class swapaHomePage {
         this.softAssert.assertAll();
 
     }
-    // Locator for the 'Calculators' link
-    private By Calculators = By.linkText("Calculators");
+
     /**
      * Clicks on the 'Calculators' link.
      */
@@ -82,8 +82,6 @@ public class swapaHomePage {
         driver.findElement(Calculators).click();
     }
 
-    // Locator for the 'Disability Calculator' link
-    private By DisabilityCalculator = By.xpath("(//a[contains(text(),'Calculators')])[1]/../div[3]/a[3]");
     /**
      * Clicks on the 'Disability Calculator' link and verifies the page title.
      *

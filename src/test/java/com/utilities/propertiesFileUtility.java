@@ -1,4 +1,4 @@
-package Com.BasePOM;
+package com.utilities;
 
 import org.openqa.selenium.WebDriver;
 
@@ -8,7 +8,7 @@ import java.util.Properties;
 /**
  * Utility class to read data from a properties file.
  */
-public class PropertiesFileUtils {
+public class propertiesFileUtility {
 
     WebDriver driver;
     /**
@@ -16,7 +16,7 @@ public class PropertiesFileUtils {
      *
      * @param driver The WebDriver instance.
      */
-    public PropertiesFileUtils(WebDriver driver) {
+    public propertiesFileUtility(WebDriver driver) {
         this.driver=driver;
     }
     /**

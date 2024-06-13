@@ -1,14 +1,14 @@
-package Com.BasePOM;
+package com.utilities;
 
 import org.openqa.selenium.WebDriver;
 /**
  * Utility class for managing WebDriver window operations.
  */
-public class WebDriverUtility {
+public class webDriverUtility {
     /**
      * Constructor (empty).
      */
-    public WebDriverUtility() {
+    public webDriverUtility() {
     }
     /**
      * Maximizes the browser window.
