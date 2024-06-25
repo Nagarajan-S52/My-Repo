@@ -18,12 +18,12 @@ import java.io.IOException;
 public class disabilityCalculatorPage {
     public WebDriver driver;
 
-    SoftAssert softAssert;
-    propertiesFileUtility properties;
-    Select select;
-    pageScrollingUtility scroll;
-    actionClassUtility action;
-    waitCommandUtility wait ;
+    public  SoftAssert softAssert;
+    public  propertiesFileUtility properties;
+    public  Select select;
+    public  pageScrollingUtility scroll;
+    public  actionClassUtility action;
+    public  waitCommandUtility wait ;
 
     /**
      * Constructor to initialize the driver and utilities.
@@ -54,7 +54,7 @@ public class disabilityCalculatorPage {
      *
      * @throws IOException If there is an error reading from the properties file.
      */
-    public void calculateMBEiledValue() throws IOException {
+    public void calculateMBEfiledValue() throws IOException {
 
         // Select the pay rate from the dropdown
         this.wait.explicitWaitForElementToBeLocated(payrateDropdown);
@@ -107,7 +107,7 @@ public class disabilityCalculatorPage {
         String valueInMonthlyTFP = findMonthlyTFP.getAttribute("value");
         double finalMonthlyTFPValue = Double.parseDouble(valueInMonthlyTFP);
 
-        // Select the sick use value from the dropdown
+        // Select the sick use value from the dropdown by using action class
         action = new actionClassUtility(driver);
         WebElement sickuse = driver.findElement(sickuseDropdown);
         action.clickAction(sickuse);

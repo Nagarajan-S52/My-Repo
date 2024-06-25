@@ -12,8 +12,8 @@ import java.time.Duration;
  * Utility class for implementing different types of waits in Selenium WebDriver.
  */
 public class waitCommandUtility {
-   WebDriver driver;
-   WebDriverWait wait;
+    public  WebDriver driver;
+    public  WebDriverWait wait;
 
     /**
      * Constructor to initialize WebDriver and WebDriverWait.

@@ -9,8 +9,8 @@ import org.openqa.selenium.interactions.Actions;
  */
 public class actionClassUtility {
 
-    WebDriver driver;
-    Actions action;
+    public WebDriver driver;
+    public  Actions action;
 
     /**
      * Constructor to initialize WebDriver.

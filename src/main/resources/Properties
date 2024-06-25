@@ -10,6 +10,8 @@ ExpectedHomePageTitle SWAPA
 
 ExceptedMessageText Submit successful.
 
+ExceptedErrorMessageText This field is required.
+
 ExceptedPilotPollingFormPageTitle Pilot Polling Form
 
 ExceptedDisabilityCalculatorPageTitle 2024 Disability Calculator

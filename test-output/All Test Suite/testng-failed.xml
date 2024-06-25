@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="/Users/nagarajans/Documents/Automation/SwapaWorkbook(failed)">
+<suite thread-count="0" parallel="classes" name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="0" parallel="classes" name="/Users/nagarajans/Documents/Automation/SwapaWorkbook(failed)">
     <classes>
-      <class name="com.test.DisabilityCalculatorExecution">
+      <class name="com.test.pilotPollingFormTest">
         <methods>
-          <include name="validateSickBankTpf"/>
-          <include name="navigateToDisabilityCalculator"/>
-          <include name="CloseBrowser"/>
-          <include name="validateMonthlyMbe"/>
           <include name="OpenBrowser"/>
-        </methods>
-      </class> <!-- com.test.DisabilityCalculatorExecution -->
-      <class name="com.test.PilotPollingFormExecution">
-        <methods>
+          <include name="CloseBrowser"/>
           <include name="fillPilotPollingForm"/>
-          <include name="CloseBrowser"/>
-          <include name="navigateToPilotPoling"/>
-          <include name="loginToSwapaApp"/>
-          <include name="OpenBrowser"/>
         </methods>
-      </class> <!-- com.test.PilotPollingFormExecution -->
+      </class> <!-- com.test.pilotPollingFormTest -->
     </classes>
   </test> <!-- /Users/nagarajans/Documents/Automation/SwapaWorkbook(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

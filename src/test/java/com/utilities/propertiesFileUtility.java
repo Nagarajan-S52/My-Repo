@@ -10,7 +10,7 @@ import java.util.Properties;
  */
 public class propertiesFileUtility {
 
-    WebDriver driver;
+    public  WebDriver driver;
     /**
      * Constructor to initialize WebDriver.
      *

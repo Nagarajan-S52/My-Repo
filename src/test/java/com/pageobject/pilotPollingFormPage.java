@@ -15,10 +15,10 @@ import java.util.List;
  * Page Object Model (POM) class for the Pilot Polling Form page.
  */
 public class pilotPollingFormPage {
-    WebDriver driver;
-    SoftAssert softAssert;
-    propertiesFileUtility property;
-    waitCommandUtility wait;
+    public  WebDriver driver;
+    public  SoftAssert softAssert;
+    public  propertiesFileUtility property;
+    public  waitCommandUtility wait;
     /**
      * Constructor to initialize WebDriver and utilities.
      *
@@ -33,19 +33,32 @@ public class pilotPollingFormPage {
     }
 
     // Locators for elements on the Pilot Polling Form page
-    private By Question1 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[1]/../div/label");
-    private By Question2 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[2]/../div/label");
-    private By Question3 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[3]/../div/label");
-    private By Question4 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[4]/../div/label");
-    private By Question5 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[5]/../div/label");
-    private By Question6 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[6]/../div/label");
-    private By Question7 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[7]/../div/label");
-    private By Question8 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[8]/../div/label");
-    private By Question9 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[9]/../div/label");
-    private By Question10 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[10]/../div/label");
-    private By Question11 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[11]/../div/label");
+    private By Question1 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[1]/../div/label " +
+            "| (//span[@class=\"Form__Element__Caption\"])[1]/../label");
+    private By Question2 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[2]/../div/label " +
+            "| (//span[@class=\"Form__Element__Caption\"])[2]/../label");
+    private By Question3 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[3]/../div/label " +
+            "| (//span[@class=\"Form__Element__Caption\"])[3]/../label");
+    private By Question4 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[4]/../div/label " +
+            "| (//span[@class=\"Form__Element__Caption\"])[4]/../label");
+    private By Question5 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[5]/../div/label " +
+            "| (//span[@class=\"Form__Element__Caption\"])[5]/../label");
+    private By Question6 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[6]/../div/label " +
+            "| (//span[@class=\"Form__Element__Caption\"])[6]/../label");
+    private By Question7 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[7]/../div/label " +
+            "| (//span[@class=\"Form__Element__Caption\"])[7]/../label");
+    private By Question8 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[8]/../div/label " +
+            "| (//span[@class=\"Form__Element__Caption\"])[8]/../label");
+    private By Question9 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[9]/../div/label " +
+            "| (//span[@class=\"Form__Element__Caption\"])[9]/../label");
+    private By Question10 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[10]/../div/label " +
+            "| (//span[@class=\"Form__Element__Caption\"])[10]/../label");
+    private By Question11 = By.xpath("(//span[@class=\"Form__Element__Caption\"])[11]/../div/label " +
+            "| (//span[@class=\"Form__Element__Caption\"])[11]/../label");
     private By SubmitButton = By.name("submit");
     private By successfullMessage = By.xpath("//div[contains(@class,\"Form__Status__Message\")]");
+
+    private By errorMessage = By.xpath("(//span[@class=\"Form__Element__Caption\"])[9]/../span[2]");
 
     /**
      * Selects an option for Question 1.
@@ -308,6 +321,18 @@ public class pilotPollingFormPage {
         String ActualmessageText = driver.findElement(successfullMessage).getText();
         // Compare the actual message text with the expected message text from the properties file
         this.softAssert.assertEquals(ActualmessageText, this.property.getDataFromPropertyFile("ExceptedMessageText"), "Success Message Mismatch");
+        // Perform all assertions
+        this.softAssert.assertAll();
+    }
+
+    public void SetSubmitButton_N() throws IOException {
+        // Click the Submit button
+        driver.findElement(SubmitButton).click();
+
+        // Get the actual message text displayed after submitting
+        String ActualErrorMessageText = driver.findElement(errorMessage).getText();
+        // Compare the actual message text with the expected message text from the properties file
+        this.softAssert.assertEquals(ActualErrorMessageText, this.property.getDataFromPropertyFile("ExceptedErrorMessageText"), "Error Message Mismatch");
         // Perform all assertions
         this.softAssert.assertAll();
     }

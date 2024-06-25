@@ -12,10 +12,10 @@ import java.io.IOException;
  */
 public class homePage {
 
-    WebDriver driver;
-    SoftAssert softAssert;
-    propertiesFileUtility property;
-    waitCommandUtility wait ;
+    public WebDriver driver;
+    public   SoftAssert softAssert;
+    public propertiesFileUtility property;
+    public  waitCommandUtility wait ;
     /**
      * Constructor to initialize WebDriver and utilities.
      *

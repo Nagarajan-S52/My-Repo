@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Test class to execute pilot polling form related tests.
  */
-public class pilotPollingFormTest extends baseClass {
+public class pilotPollingFormTest_P extends baseClass {
     loginPage login;
 
     /**
@@ -21,7 +21,7 @@ public class pilotPollingFormTest extends baseClass {
      *
      * @throws FileNotFoundException If the properties file is not found.
      */
-    public pilotPollingFormTest() throws FileNotFoundException {
+    public pilotPollingFormTest_P() throws FileNotFoundException {
     }
     /**
      * Test case to perform login.

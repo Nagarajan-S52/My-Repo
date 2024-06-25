@@ -8,8 +8,8 @@ import org.openqa.selenium.WebDriver;
  */
 public class pageScrollingUtility {
 
-    WebDriver driver;
-    JavascriptExecutor scroll;
+    public WebDriver driver;
+    public JavascriptExecutor scroll;
     /**
      * Constructor to initialize WebDriver and JavaScriptExecutor.
      *

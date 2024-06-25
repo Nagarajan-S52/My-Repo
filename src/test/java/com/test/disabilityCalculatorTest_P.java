@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Test class to execute disability calculator related tests.
  */
-public class disabilityCalculatorTest extends baseClass {
+public class disabilityCalculatorTest_P extends baseClass {
 
     // Initialize the DisabilityCalculatorPage instance
     disabilityCalculatorPage disability = new disabilityCalculatorPage(driver);;
@@ -21,7 +21,7 @@ public class disabilityCalculatorTest extends baseClass {
      *
      * @throws FileNotFoundException If the properties file is not found.
      */
-    public disabilityCalculatorTest() throws FileNotFoundException {
+    public disabilityCalculatorTest_P() throws FileNotFoundException {
     }
 
     /**
@@ -61,7 +61,7 @@ public class disabilityCalculatorTest extends baseClass {
         // Recreate DisabilityCalculatorPage instance
     disability = new disabilityCalculatorPage(driver);
         // Calculate and verify monthly MBE value
-        disability.calculateMBEiledValue();
+        disability.calculateMBEfiledValue();
     }
     /**
      * Test case to verify sick bank TPF value calculation.
@@ -70,18 +70,13 @@ public class disabilityCalculatorTest extends baseClass {
      */
     @Test(priority = 3)
     public void validateSickBankTpf() throws IOException {
-        init();
+
         // Recreate DisabilityCalculatorPage instance
       //  disability = new DisabilityCalculatorPage(driver);
         // Calculate and verify sick bank TPF value
         disability.calculateSickBankTpfValue();
     }
 
-    public void         init(){
-        disability = new disabilityCalculatorPage(driver);
-
-
-    }
 
 
 
